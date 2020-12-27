@@ -120,8 +120,8 @@ return [
         ],
     ],
     'ticket'         => [
-        'title'          => 'Tickets',
-        'title_singular' => 'Ticket',
+        'title'          => 'Events',
+        'title_singular' => 'Event',
         'fields'         => [
             'id'                      => 'ID',
             'id_helper'               => '',
@@ -160,7 +160,7 @@ return [
         'fields'         => [
             'id'                  => 'ID',
             'id_helper'           => '',
-            'ticket'              => 'Ticket',
+            'ticket'              => 'Event',
             'ticket_helper'       => '',
             'author_name'         => 'Author Name',
             'author_name_helper'  => '',

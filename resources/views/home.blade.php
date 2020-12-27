@@ -20,7 +20,7 @@
                             <div class="card text-white bg-primary">
                                 <div class="card-body pb-3">
                                     <div class="text-value">{{ number_format($totalTickets) }}</div>
-                                    <div>Total tickets</div>
+                                    <div>Total events</div>
                                     <br />
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                             <div class="card text-white bg-success">
                                 <div class="card-body pb-3">
                                     <div class="text-value">{{ number_format($openTickets) }}</div>
-                                    <div>Open tickets</div>
+                                    <div>Open events</div>
                                     <br />
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                             <div class="card text-white bg-danger">
                                 <div class="card-body pb-3">
                                     <div class="text-value">{{ number_format($closedTickets) }}</div>
-                                    <div>Closed tickets</div>
+                                    <div>Closed events</div>
                                     <br />
                                 </div>
                             </div>
