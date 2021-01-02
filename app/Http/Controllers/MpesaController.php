@@ -37,7 +37,7 @@ class MpesaController extends Controller
         
        // Log::info('RECEIVED TRANSAMOUNT: '.$transamount);
         
-        /*DB::insert('INSERT INTO payments
+        DB::insert('INSERT INTO payments
                     ( 
                     TransactionType,
                     TransID,
@@ -63,7 +63,7 @@ class MpesaController extends Controller
                     $firstname, 
                     $middlename, 
                     $lastname, 
-                    $orgaccountbalance] );*/
+                    $orgaccountbalance] );
                             
     echo'{"ResultCode":0,"ResultDesc":"Confirmation received successfully"}';
         
