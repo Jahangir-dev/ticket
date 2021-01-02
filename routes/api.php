@@ -26,3 +26,11 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Comments
     Route::apiResource('comments', 'CommentsApiController');
 });
+
+Route::post('validate', function(Request $request){
+    \Log::info($request->getContent());
+});
+
+Route::post('confirm', function(Request $request){
+    \Log::info($request->getContent());
+});

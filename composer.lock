@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "86a7a42865a64b45cf16b08637dbc2d2",
+    "content-hash": "3ce1b14273c93c7a21796f1fe76feddc",
     "packages": [
         {
             "name": "brick/math",
@@ -830,6 +830,69 @@
                 "php"
             ],
             "time": "2020-03-25T18:49:23+00:00"
+        },
+        {
+            "name": "gathuku/laravelmpesa",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gathuku/laravel_mpesa.git",
+                "reference": "cc61d3494e059544e36949a752deec026f25e311"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gathuku/laravel_mpesa/zipball/cc61d3494e059544e36949a752deec026f25e311",
+                "reference": "cc61d3494e059544e36949a752deec026f25e311",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "laravel",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gathuku\\Mpesa\\MpesaServiceProvider"
+                    ],
+                    "aliases": {
+                        "Mpesa": "Gathuku\\Mpesa\\Facades\\Mpesa"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gathuku\\Mpesa\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "moses gathuku",
+                    "email": "mosesgathuku95@gmail.com"
+                }
+            ],
+            "description": "A simple mpesa package for laravel framework",
+            "homepage": "https://github/gathuku/laravel_mpesa",
+            "keywords": [
+                "gathuku",
+                "laravel",
+                "mpesa"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/gathuku",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-12-22T13:09:54+00:00"
         },
         {
             "name": "graham-campbell/result-type",
