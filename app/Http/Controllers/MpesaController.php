@@ -13,7 +13,7 @@ class MpesaController extends Controller
     	 $b2cResponse=Mpesa::simulateC2B(100, "254708374149", "Testing");
     	 $balance = Mpesa::check_balance();
     	 $expressResponse=Mpesa::express(100,'254708374149','24242524','Testing Payment');
-    	 dd($balance,$b2cResponse,$expressResponse);
+    	 
     }
 
     public function storeResults(Request $requests){
