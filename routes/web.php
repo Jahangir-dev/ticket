@@ -13,8 +13,11 @@ Auth::routes(['register' => false]);
 
 Route::post('tickets/media', 'TicketController@storeMedia')->name('tickets.storeMedia');
 Route::post('tickets/comment/{ticket}', 'TicketController@storeComment')->name('tickets.storeComment');
-Route::get('pay','MpesaController@index');
+
+Route::get('event-ticket','EventController@index');
+Route::post('/pay','MpesaController@index');
 Route::post('/callback','MpesaController@storeResults');
+Route::post('/balance','MpesaController@BalanceResults');
 
 Route::resource('tickets', 'TicketController')->only(['show', 'create', 'store']);
 

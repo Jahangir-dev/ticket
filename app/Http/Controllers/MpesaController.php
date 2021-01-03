@@ -7,13 +7,29 @@ use Mpesa;
 
 class MpesaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-    	Mpesa::c2bRegisterUrls();
-    	 $b2cResponse=Mpesa::simulateC2B(100, "254708374149", "Testing");
-    	 $balance = Mpesa::check_balance();
-    	 $expressResponse=Mpesa::express(100,'254708374149','24242524','Testing Payment');
+    	//dd($request->all());
+    	$reg = Mpesa::c2bRegisterUrls();
+    	/* $b2cResponse=Mpesa::simulateC2B(100, "254708374149", "Testing");*/
+    	 //$balance = Mpesa::check_balance();
+    	 $expressResponse=Mpesa::express($request['amount'],$request['phonenumber'],'24242524','Testing Payment');
+
+
+    	 $array = json_decode($expressResponse, true);
     	 
+    	 if(array_key_exists('CustomerMessage', $array))
+    	 {
+
+    	 	return redirect()->back()->with(['status' => $array['CustomerMessage']]);
+    	 }
+
+    	 if(array_key_exists('errorMessage', $array))
+    	 {
+
+    	 	return redirect()->back()->with(['status' => $array['errorMessage']]);
+    	 }
+
     }
 
     public function storeResults(Request $requests){
@@ -67,5 +83,10 @@ class MpesaController extends Controller
                             
     echo'{"ResultCode":0,"ResultDesc":"Confirmation received successfully"}';
         
+    }
+
+    public function BalanceResults(Request $request)
+    {
+    	dd($request);
     }
 }
