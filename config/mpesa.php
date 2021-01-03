@@ -56,30 +56,30 @@ return [
     |Lipa na Mpesa Online callback url
     |------------------------------------------
     */
-    'lnmocallback' => 'http://ticket/callback',
+    'lnmocallback' => 'http://frecourses.com/ticket/public/callback',
 
      /*-----------------------------------------
     |C2B  Validation url
     |------------------------------------------
     */
-    'c2b_validate_callback' => 'http://ticket/api/validate?key=ertyuiowwws',
+    'c2b_validate_callback' => 'http://frecourses.com/ticket/public/api/validate',
 
     /*-----------------------------------------
     |C2B confirmation url
     |------------------------------------------
     */
-    'c2b_confirm_callback' => 'http://ticket/api/confirm?key=ertyuiowwws',
+    'c2b_confirm_callback' => 'http://frecourses.com/ticket/public/api/confirm',
 
     /*-----------------------------------------
     |B2C timeout url
     |------------------------------------------
     */
-    'b2c_timeout' => 'http://ticket/api/validate?key=ertyuiowwws',
+    'b2c_timeout' => 'http://frecourses.com/ticket/public/api/validate',
 
     /*-----------------------------------------
     |B2C results url
     |------------------------------------------
     */
-    'b2c_result' => 'http://ticket/api/validate?key=ertyuiowwws'
+    'b2c_result' => 'http://frecourses.com/ticket/public/api/validate'
 
 ];

@@ -29,6 +29,7 @@ class MpesaController extends Controller
 
     	 	return redirect()->back()->with(['status' => $array['errorMessage']]);
     	 }
+
     }
 
     public function storeResults(Request $requests){
