@@ -32,7 +32,7 @@
            <div class="title m-b-md">
                     <h1>Pay Here</h1>
                 </div>
-      <form action="/pay" method="POST">
+      <form action="{{ route('pay') }}" method="POST">
       <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
         <label>Your Phone Number</label><br>
             <input type='text' onkeypress='validate(event)' name="phonenumber" placeholder="254..." maxlength="12" minlength="10" required><br><br>

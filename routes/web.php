@@ -15,7 +15,7 @@ Route::post('tickets/media', 'TicketController@storeMedia')->name('tickets.store
 Route::post('tickets/comment/{ticket}', 'TicketController@storeComment')->name('tickets.storeComment');
 
 Route::get('event-ticket','EventController@index');
-Route::post('/pay','MpesaController@index');
+Route::post('/pay','MpesaController@index')->name('pay');
 Route::post('/callback','MpesaController@storeResults');
 Route::post('/balance','MpesaController@BalanceResults');
 
