@@ -15,18 +15,18 @@ class PaymentsTable extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('TransactionType');
-            $table->string('TransID');
-            $table->string('TransTime');
-            $table->string('TransAmount');
-            $table->string('BusinessShortCode');
-            $table->string('BillRefNumber');
-            $table->string('InvoiceNumber');
-            $table->string('MSISDN');
-            $table->string('FirstName');
+            $table->string('TransactionType')->nullable();
+            $table->string('TransID')->nullable();
+            $table->string('TransTime')->nullable();
+            $table->string('TransAmount')->nullable();
+            $table->string('BusinessShortCode')->nullable();
+            $table->string('BillRefNumber')->nullable();
+            $table->string('InvoiceNumber')->nullable();
+            $table->string('MSISDN')->nullable();
+            $table->string('FirstName')->nullable();
             $table->string('MiddleName')->nullable();
-            $table->string('LastName');
-            $table->string('OrgAccountBalance');
+            $table->string('LastName')->nullable();
+            $table->string('OrgAccountBalance')->nullable();
             $table->timestamps();
         });
     }

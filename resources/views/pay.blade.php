@@ -47,16 +47,6 @@
 </div>
 </div>
     
-<style type="text/css">
-	.header .navbar-nav li.active > a {
-		color: #000000 !important;
-	}
-
-	.header .navbar-nav .nav-link {
-		color: #424040 !important;
-	}
-
-</style>
 @endsection
 @section('scripts')
 @parent

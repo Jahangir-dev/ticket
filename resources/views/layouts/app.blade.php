@@ -183,6 +183,7 @@
     <!-- template main js file -->
     <script src="{{asset('js/main.js') }}"></script>
 
+     
     <script type="text/javascript">
         /*preloader*/
         $(window).on('load', function () {
