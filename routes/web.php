@@ -65,4 +65,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 Route::post('/requestpay','initiatepush@pay')->name('requestpay');
 
+
+Route::get('/result', function () {
+    return View::make('result', ['receipt' => 'HDYDNSKSK','amount' => 10]);
+});
+
+Route::get('/result_fail', function () {
+    return View::make('result', ['reason' => 'Wrong pin']);
+});
+
 Route::post('/callback','confirmcallback@storeResults');
+
+Route::get('/check/{CheckoutRequestID}','confirmcallback@check');
