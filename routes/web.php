@@ -15,9 +15,9 @@ Route::post('tickets/media', 'TicketController@storeMedia')->name('tickets.store
 Route::post('tickets/comment/{ticket}', 'TicketController@storeComment')->name('tickets.storeComment');
 
 Route::get('event-ticket','EventController@index');
-Route::post('/pay','MpesaController@index')->name('pay');
+/*Route::post('/pay','MpesaController@index')->name('pay');
 Route::post('/callback','MpesaController@storeResults');
-Route::post('/balance','MpesaController@BalanceResults');
+Route::post('/balance','MpesaController@BalanceResults');*/
 
 Route::resource('tickets', 'TicketController')->only(['show', 'create', 'store']);
 
@@ -60,3 +60,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     // Audit Logs
     Route::resource('audit-logs', 'AuditLogsController', ['except' => ['create', 'store', 'edit', 'update', 'destroy']]);
 });
+
+// Mpesa payment
+
+Route::post('/requestpay','initiatepush@pay')->name('requestpay');
+
+Route::post('/callback','confirmcallback@storeResults');
