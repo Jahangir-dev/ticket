@@ -59,7 +59,7 @@ class initiatepush extends Controller
                                     return view('waiting', ['CheckoutRequestID' =>0, 'CustomerMessage' =>$CustomerMessage,'complete'=>true]);
                             }
                }
-               elseif(array_key_exists("errorCode",$state)){
+               elseif(property_exists($state,"errorCode")){
                 
                     if(($state->errorCode) == "500.001.1001"){
                         $CustomerMessage = "Looks like you provided an invalid phone number";
