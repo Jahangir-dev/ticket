@@ -16,7 +16,7 @@
   @endsection
   @section('scripts')
 @parent
-  <script src="{!! asset('js/waterbubble.min.js') !!}"></script>
+  <script src="{!! asset('js/waterbubble.js') !!}"></script>
 
        <script>
       console.log('<?= $complete ?>' + ': STatus completion');
