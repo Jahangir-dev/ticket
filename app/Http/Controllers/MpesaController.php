@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Mpesa;
+use DB;
 
 class MpesaController extends Controller
 {
