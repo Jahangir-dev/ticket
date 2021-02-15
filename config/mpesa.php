@@ -56,42 +56,30 @@ return [
     |Lipa na Mpesa Online callback url
     |------------------------------------------
     */
-
-    'lnmocallback' => 'http://1aef709f611c.ngrok.io/callback',
+    'lnmocallback' => 'http://frecourses.com/ticket/public/callback',
 
      /*-----------------------------------------
     |C2B  Validation url
     |------------------------------------------
     */
-
-    'c2b_validate_callback' => 'http://1aef709f611c.ngrok.io/api/validate?key=ertyuiowwws',
+    'c2b_validate_callback' => 'http://frecourses.com/ticket/public/api/validate',
 
     /*-----------------------------------------
     |C2B confirmation url
     |------------------------------------------
     */
-
-    'c2b_confirm_callback' => 'http://1aef709f611c.ngrok.io/api/confirm?key=ertyuiowwws',
+    'c2b_confirm_callback' => 'http://frecourses.com/ticket/public/api/confirm',
 
     /*-----------------------------------------
     |B2C timeout url
     |------------------------------------------
     */
-
-    'b2c_timeout' => 'http://1aef709f611c.ngrok.io/api/validate?key=ertyuiowwws',
+    'b2c_timeout' => 'http://frecourses.com/ticket/public/api/validate',
 
     /*-----------------------------------------
     |B2C results url
     |------------------------------------------
     */
-
-    'b2c_result' => 'http://1aef709f611c.ngrok.io/api/validate?key=ertyuiowwws',
-
-
-    /*-----------------------------------------
-    |account results url
-    |------------------------------------------
-    */
-    'ac_result' => 'http://1aef709f611c.ngrok.io/balance'
+    'b2c_result' => 'http://frecourses.com/ticket/public/api/validate'
 
 ];
