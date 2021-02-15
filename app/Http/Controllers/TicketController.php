@@ -19,6 +19,8 @@ class TicketController extends Controller
      */
     public function create()
     {
+        $query = Ticket::with(['status', 'priority', 'category', 'assigned_to_user', 'comments'])->get();
+        dd($query);
         return view('tickets.create');
     }
 
