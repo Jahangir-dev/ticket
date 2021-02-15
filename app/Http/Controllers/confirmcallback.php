@@ -88,9 +88,8 @@ class confirmcallback extends Controller
     }
      public function check(Request $request, $CheckoutRequestID){
          $state_ =  DB::table('payments')-> where('CheckoutRequestID',$CheckoutRequestID)->pluck('status');
-
-
-         return $state_;
+            $int[] = (int)$state_[0];
+         return $int;
      }
    
 }
