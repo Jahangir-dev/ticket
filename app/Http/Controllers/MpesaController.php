@@ -29,7 +29,7 @@ class MpesaController extends Controller
      * Lipa na M-PESA STK Push method
      * */
  
-    public function customerMpesaSTKPush()
+    public function customerMpesaSTKPush(Request $request)
     {
         $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
  
@@ -44,11 +44,11 @@ class MpesaController extends Controller
             'Password' => $this->lipaNaMpesaPassword(),
             'Timestamp' => Carbon::rawParse('now')->format('YmdHms'),
             'TransactionType' => 'CustomerPayBillOnline',
-            'Amount' => 5,
-            'PartyA' => 254728851199, // replace this with your phone number
+            'Amount' => $request['amount'],
+            'PartyA' => $request['phonenumber'], // replace this with your phone number
             'PartyB' => 174379,
-            'PhoneNumber' => 254728851199, // replace this with your phone number
-            'CallBackURL' => 'https://blog.hlab.tech/',
+            'PhoneNumber' => ['phonenumber'], // replace this with your phone number
+            'CallBackURL' => 'https://frecourses.com/api/v1/hlab/transaction/confirmation',
             'AccountReference' => "H-lab tutorial",
             'TransactionDesc' => "Testing stk push on sandbox"
         ];
@@ -67,8 +67,8 @@ class MpesaController extends Controller
  
     public function generateAccessToken()
     {
-        $consumer_key="Ay3YiT9j94fVf41RNBMvnJG3gdl2UVWg";
-        $consumer_secret="5ILt4rmKOOoUGr7I";
+        $consumer_key="EoODSR3lnctIjnQq7GEwgqY1SZG1DDt5";
+        $consumer_secret="MwaAaeyHGCKsKaoo";
         $credentials = base64_encode($consumer_key.":".$consumer_secret);
  
         $url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
@@ -158,8 +158,8 @@ class MpesaController extends Controller
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode(array(
             'ShortCode' => "600141",
             'ResponseType' => 'Completed',
-            'ConfirmationURL' => "https://343318d8572c.ngrok.io/api/v1/hlab/transaction/confirmation",
-            'ValidationURL' => "https://343318d8572c.ngrok.io/api/v1/hlab/validation"
+            'ConfirmationURL' => "https://frecourses.com/api/v1/hlab/transaction/confirmation",
+            'ValidationURL' => "https://frecourses.com/api/v1/hlab/validation"
         )));
         $curl_response = curl_exec($curl);
         echo $curl_response;
