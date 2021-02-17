@@ -48,7 +48,7 @@ class MpesaController extends Controller
             'PartyA' => 254728851199, // replace this with your phone number
             'PartyB' => 174379,
             'PhoneNumber' => 254728851199, // replace this with your phone number
-            'CallBackURL' => 'https://blog.hlab.tech/',
+            'CallBackURL' => 'http://frecourses.com/ticket/public',
             'AccountReference' => "H-lab tutorial",
             'TransactionDesc' => "Testing stk push on sandbox"
         ];
@@ -67,8 +67,8 @@ class MpesaController extends Controller
  
     public function generateAccessToken()
     {
-        $consumer_key="Ay3YiT9j94fVf41RNBMvnJG3gdl2UVWg";
-        $consumer_secret="5ILt4rmKOOoUGr7I";
+        $consumer_key="EoODSR3lnctIjnQq7GEwgqY1SZG1DDt5";
+        $consumer_secret="MwaAaeyHGCKsKaoo";
         $credentials = base64_encode($consumer_key.":".$consumer_secret);
  
         $url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
@@ -156,10 +156,10 @@ class MpesaController extends Controller
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode(array(
-            'ShortCode' => "600141",
+            'ShortCode' => "600730",
             'ResponseType' => 'Completed',
-            'ConfirmationURL' => "https://343318d8572c.ngrok.io/api/v1/hlab/transaction/confirmation",
-            'ValidationURL' => "https://343318d8572c.ngrok.io/api/v1/hlab/validation"
+            'ConfirmationURL' => "http://frecourses.com/ticket/public/api/v1/hlab/transaction/confirmation",
+            'ValidationURL' => "http://frecourses.com/ticket/public/api/v1/hlab/validation"
         )));
         $curl_response = curl_exec($curl);
         echo $curl_response;
