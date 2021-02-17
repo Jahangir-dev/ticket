@@ -29,7 +29,7 @@ class MpesaController extends Controller
      * Lipa na M-PESA STK Push method
      * */
  
-    public function customerMpesaSTKPush()
+    public function customerMpesaSTKPush(Request $request)
     {
         $url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
  
@@ -44,11 +44,11 @@ class MpesaController extends Controller
             'Password' => $this->lipaNaMpesaPassword(),
             'Timestamp' => Carbon::rawParse('now')->format('YmdHms'),
             'TransactionType' => 'CustomerPayBillOnline',
-            'Amount' => 5,
-            'PartyA' => 254728851199, // replace this with your phone number
+            'Amount' => $request['amount'],
+            'PartyA' => $request['phonenumber'], // replace this with your phone number
             'PartyB' => 174379,
-            'PhoneNumber' => 254728851199, // replace this with your phone number
-            'CallBackURL' => 'http://frecourses.com/ticket/public',
+            'PhoneNumber' => ['phonenumber'], // replace this with your phone number
+            'CallBackURL' => 'https://frecourses.com/api/v1/hlab/transaction/confirmation',
             'AccountReference' => "H-lab tutorial",
             'TransactionDesc' => "Testing stk push on sandbox"
         ];
